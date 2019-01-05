@@ -1,3 +1,5 @@
+import random
+import time
 import fut
 session = fut.Core('xxx@gmail.com','xxx','test',platform='ps4',debug=True)
 count=0
@@ -13,6 +15,6 @@ while True:
                                 count += 1
                                 print("count:%d" % (count))
         print("wait for 5,10s ...")
-        break;
+        time.sleep(random.randint(10,15)
 session.logout()
 
