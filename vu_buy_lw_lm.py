@@ -4,10 +4,10 @@ import fut
 session = fut.Core('xxx@gmail.com','xxx','test',platform='ps4',debug=True)
 count=0
 while True:
-        items = session.searchAuctions('training',max_buy=250, start=20,category='position',position='LW-LM')
+        items = session.searchAuctions('training',max_buy=200, start=20,category='position',position='LW-LM')
         for x in items:
                 if count>10: break
-                flag=session.bid(x['tradeId'], 250)
+                flag=session.bid(x['tradeId'], 200)
                 print(flag)
                 if flag:
                         a=session.sendToClub(x['id'])
