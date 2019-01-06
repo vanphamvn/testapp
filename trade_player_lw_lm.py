@@ -14,7 +14,7 @@ for x in items:
                 session.watchlistDelete(x['id'])
                 print("xoa card outbid")
         if count>=a: break
-        if all([x['bidSate'] == 'highest', x['tradeState'] == 'closed']):
+        if all([x['bidState'] == 'highest', x['tradeState'] == 'closed']):
                 flag=session.sendToClub(x['id'])
                 print(flag)
                 if flag:
