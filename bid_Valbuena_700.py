@@ -4,7 +4,7 @@ import fut
 session = fut.Core('xxx@gmail.com','xxx','test',platform='ps4',debug=True)
 wItems = session.watchlist()
 if len(wItems) > 0:
-	for a in xItems:
+	for a in wItems:
 		if a['tradeId'] == -1:
 			session.quickSell(a['id'])
 count=0
