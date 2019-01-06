@@ -6,6 +6,7 @@ items = session.watchlist()
 for x in items:
         if x['tradeId'] == -1:
                 session.quickSell(x['id'])
+                print("xoa expired card %s" % (x['id']))
                 break
         if count>=a: break
         flag=session.sendToClub(x['id'])
