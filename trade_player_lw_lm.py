@@ -1,6 +1,7 @@
 import fut
 session = fut.Core('xxx@gmail.com','xxx','test',platform='ps4',debug=True)
 count=0
+int a=0
 session.tradepileClear()
 a = session.tradepile_size - len(session.tradepile())
 print("so luong card can send to tranfer %s" % a)
