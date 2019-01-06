@@ -6,6 +6,7 @@ count=0
 while True:
 	items = session.searchAuctions('player',max_price=700, min_buy = 900, start=20,defId=177326)
 	for x in items:
+		if x['currentBid']>=700 :break
 		if count>=40: break
 		flag=session.bid(x['tradeId'], 700)
 		print(flag)
