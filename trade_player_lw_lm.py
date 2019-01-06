@@ -15,11 +15,11 @@ for x in items:
         print(flag)
         if flag:
                 session.applyConsumable(x['id'], 5003065)
-                print("count:%d" % (count))
                 print("sent card to tradepile")
                 session.sendToTradepile(x['id'])
                 session.sell(x['id'], 1200, 1300)
                 count += 1
+                print("da send card thanh cong to Transfer, so luong %s" % count) 
         else:
                 a = session.club(defId='164985')
                 if a[0]['position'] == 'LW' :
@@ -27,6 +27,7 @@ for x in items:
                 session.sendToTradepile(a[0]['id'])
                 session.sell(a[0]['id'], 1200, 1300)
                 count += 1
+                print("da send card thanh cong to Transfer, so luong %s" % count)
 print("done ...")
 session.relist()
 session.logout()
