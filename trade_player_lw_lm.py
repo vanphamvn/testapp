@@ -11,7 +11,7 @@ for x in items:
                 print("special case : xoa expired card %s" % (x['id']))
                 break
         if x['bidState'] == 'outbid':
-                session.watchlistDelete(x['id'])
+                session.watchlistDelete(x['tradeId'])
                 print("xoa card outbid")
         if count>=a: break
         if all([x['bidState'] == 'highest', x['tradeState'] == 'closed']):
