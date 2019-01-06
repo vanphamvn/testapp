@@ -2,6 +2,11 @@ import random
 import time
 import fut
 session = fut.Core('xxx@gmail.com','xxx','test',platform='ps4',debug=True)
+wItems = session.watchlist()
+if len(wItems) > 0:
+	for a in xItems:
+		if a['tradeId'] == -1:
+			session.quickSell(a['id'])
 count=0
 while True:
 	items = session.searchAuctions('player',max_price=700, min_buy = 900, start=20,defId=177326)
