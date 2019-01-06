@@ -17,6 +17,6 @@ while True:
                                 print("count:%d" % (count))
         print("wait for 5,10s ...")
         i += 20
-        time.sleep(random.randint(10.15))
+        time.sleep(random.randint(10,15))
 session.logout()
 
