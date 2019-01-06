@@ -1,9 +1,13 @@
 import fut
 session = fut.Core('xxx@gmail.com','xxx','test',platform='ps4',debug=True)
 count=0
+a = session.tradepile_size - len(session.tradepile())
 items = session.watchlist()
 for x in items:
-        if count>=8: break
+        if x['tradeId'] == -1:
+                session.quickSell(x['id'])
+                break
+        if count>=a: break
         flag=session.sendToClub(x['id'])
         print(flag)
         if flag:
