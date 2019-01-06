@@ -34,5 +34,5 @@ for x in items:
                         print("da send card thanh cong to Transfer, so luong %s" % count)
 print("done ...")
 session.relist()
-session.tradepileClear()
+#session.tradepileClear() # can xu li them, neu co the sold thi run it
 session.logout()
