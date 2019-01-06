@@ -8,11 +8,13 @@ if len(wItems) > 0:
 		if a['tradeId'] == -1:
 			session.quickSell(a['id'])
 count=0
+size = session.watchlist_size - len(wItems)
+print("so luong card can bid %s" % (size))
 while True:
 	items = session.searchAuctions('player',max_price=700, min_buy = 900, start=20,defId=177326)
 	for x in items:
 		if x['currentBid']>=700 :break
-		if count>=40: break
+		if count>=size: break
 		flag=session.bid(x['tradeId'], 700)
 		print(flag)
 		if flag:
