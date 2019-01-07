@@ -13,6 +13,7 @@ size = session.watchlist_size - len(wItems)
 print("so luong card can bid %s" % (size))
 while True:
 	items = session.searchAuctions('player',max_price=700, min_buy = 900, start=i,defId=177326)
+	if count>=size: break
 	for x in items:
 		if x['currentBid']>=700 :break
 		if count>=size: break
