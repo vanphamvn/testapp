@@ -19,6 +19,7 @@ for y in items:
         if y['bidState'] == 'outbid':
                 session.watchlistDelete(y['tradeId'])
                 print("xoa card outbid")
+        if len(y) <= 2: break #Se xu li sau
         if count>=a: break
         if all([y['bidState'] == 'highest', y['tradeState'] == 'closed']):
                 flag=session.sendToClub(y['id'])
