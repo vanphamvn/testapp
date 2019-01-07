@@ -3,7 +3,7 @@ import time
 import fut
 session = fut.Core('xxx@gmail.com','xxx','test',platform='ps4',debug=True)
 count=0
-i = input('Nhap so luong card can mua :')
+i = int(input('Nhap so luong card can mua :'))
 while True:
         items = session.searchAuctions('training',max_buy=200, start=i,category='position',position='LW-LM')
         for x in items:
