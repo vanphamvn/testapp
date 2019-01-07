@@ -27,9 +27,9 @@ for x in items:
                 else:
                         b = session.club(defId=x['assetId']) # Nho tim defIf player put vo day
                         if b[0]['position'] == 'LW' :
-                                session.applyConsumable(a[0]['id'], 5003065)
-                        session.sendToTradepile(a[0]['id'])
-                        session.sell(a[0]['id'], 1300, 1400)
+                                session.applyConsumable(b[0]['id'], 5003065)
+                        session.sendToTradepile(b[0]['id'])
+                        session.sell(b[0]['id'], 1300, 1400)
                         count += 1
                         print("da send card thanh cong to Transfer, so luong %s" % count)
 print("done ...")
