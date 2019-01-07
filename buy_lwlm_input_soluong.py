@@ -3,11 +3,13 @@ import time
 import fut
 session = fut.Core('xxx@gmail.com','xxx','test',platform='ps4',debug=True)
 count=0
-i = int(input('Nhap so luong card can mua :'))
+i=0
+size = int(input('Nhap so luong card can mua :'))
 while True:
         items = session.searchAuctions('training',max_buy=200, start=i,category='position',position='LW-LM')
+        if count>size: break
         for x in items:
-                if count>i: break
+                if count>size: break
                 flag=session.bid(x['tradeId'], 200)
                 print(flag)
                 if flag:
