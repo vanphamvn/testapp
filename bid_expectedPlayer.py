@@ -18,9 +18,9 @@ while True:
 	items = session.searchAuctions('player',max_price=mprice, min_buy = mbuy, start=i,defId=pid) #177326, 164985
 	if count>=size: break
 	for x in items:
-		if x['currentBid']>=mbuy :break
+		if x['currentBid']>=mprice :break
 		if count>=size: break
-		flag=session.bid(x['tradeId'], mbuy)
+		flag=session.bid(x['tradeId'], mprice)
 		print(flag)
 		if flag:
 			count += 1
