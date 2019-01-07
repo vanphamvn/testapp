@@ -11,13 +11,16 @@ count=0
 i=0
 size = session.watchlist_size - len(wItems)
 print("so luong card can bid %s" % (size))
+pid = int(input('Nhap id player can bid :'))
+mprice = int(input('Nhap max bid mong muon: '))
+mbuy = int(input('Nhap min buy now mong muon: '))
 while True:
-	items = session.searchAuctions('player',max_price=700, min_buy = 900, start=i,defId=177326)
+	items = session.searchAuctions('player',max_price=mprice, min_buy = mbuy, start=i,defId=pid) #177326, 164985
 	if count>=size: break
 	for x in items:
-		if x['currentBid']>=700 :break
+		if x['currentBid']>=mbuy :break
 		if count>=size: break
-		flag=session.bid(x['tradeId'], 700)
+		flag=session.bid(x['tradeId'], mbuy)
 		print(flag)
 		if flag:
 			count += 1
