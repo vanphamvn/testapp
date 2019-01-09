@@ -1,7 +1,7 @@
 import random
 import time
 import fut
-session = fut.Core('vanphamvn@gmail.com', 'Wasd123!@#', 'test', platform='pc', debug=True)
+session = fut.Core('xxx@gmail.com', 'xxx', 'test', platform='pc', debug=True)
 print(session.credits)
 wItems = session.watchlist()
 if len(wItems) > 0:
